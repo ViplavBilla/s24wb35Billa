@@ -8,11 +8,11 @@ block content
   - let rows = Number(query.rows)
   - let cols = Number(query.cols)
 
-  if !(Number.isInteger(rows)) && !(Number.isInteger(cols))
+  if !(Number.isInteger(rows)) || !(Number.isInteger(cols))
     p rows or columns is not an integer 
-  else if (rows < 3) && (rows > 13)
+  else if (rows < 3) || (rows > 13)
     p given values are too big or too small
-  else if (cols < 3) && (cols > 13)
+  else if (cols < 3) || (cols > 13)
     p given values are too big or too small
   else 
     table(id="outer")
