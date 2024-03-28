@@ -6,5 +6,11 @@ block content
   
   div(class="container-fluid")
     div(class="row")
-      each item in Employee
-        div(class="col-sm-2") #{item.empid}, #{item.empname}, #{item.empdept}
+      each item, index in Employee
+        div(class="col-sm-2", onclick=`buy(${index})`) #{item.empid}, #{item.empname}, #{item.empdept}
+      script.
+        function buy (index) 
+        {
+          alert(`you purchased item: ${index + 1}`)
+        }
+
